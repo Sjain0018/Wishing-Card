@@ -4,80 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../../shree durga public school/Shree-Durga-public-school/Material/favicon.png" type="image/x-icon">
-    <title>Custom Greeting Card Generator</title>
+    <title>Elegant Greeting Card Generator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
     <div class="container">
-      <h1>Make Your Own Wishing Card</h1>
-      <p class="intro">Create a personalized greeting card for any occasion!</p>
+      <header>
+        <h1><i class="fas fa-heart"></i> Elegant Card Creator</h1>
+        <p class="intro">Create beautiful, personalized greeting cards for your loved ones</p>
+      </header>
 
-      <div class="form-container">
-        <form id="cardForm">
-          <div class="form-group">
-            <label for="recipientName">Enter Recipient's Name:</label>
-            <input
-              type="text"
-              id="recipientName"
-              placeholder="Enter recipient's name"
-              required
-            />
+      <main>
+        <section class="form-section">
+          <form id="cardForm" class="card-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="recipientName">
+                  <i class="fas fa-user"></i> Recipient's Name
+                </label>
+                <input type="text" id="recipientName" required>
+              </div>
+              <div class="form-group">
+                <label for="userName">
+                  <i class="fas fa-signature"></i> Your Name
+                </label>
+                <input type="text" id="userName" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="wish">
+                <i class="fas fa-star"></i> Your Wish
+              </label>
+              <input type="text" id="wish" placeholder="e.g. Happy Birthday" required>
+            </div>
+
+            <div class="form-group">
+              <label for="personalMessage">
+                <i class="fas fa-comment"></i> Personal Message
+              </label>
+              <textarea id="personalMessage" rows="4"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bgImage">
+                  <i class="fas fa-image"></i> Background Image
+                </label>
+                <input type="file" id="bgImage" accept="image/*">
+              </div>
+              <div class="form-group">
+                <label for="fontColor">
+                  <i class="fas fa-palette"></i> Text Color
+                </label>
+                <input type="color" id="fontColor" value="#000000">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-generate">
+              <i class="fas fa-magic"></i> Create Card
+            </button>
+          </form>
+        </section>
+
+        <section class="preview-section">
+          <div id="cardOutput" class="card-preview">
+            <div id="cardMessage">
+              <p id="greetingText"></p>
+              <p id="personalText"></p>
+            </div>
+            <p id="userSignature"></p>
           </div>
-
-          <div class="form-group">
-            <label for="userName">Enter Your Name:</label>
-            <input
-              type="text"
-              id="userName"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="wish">Enter Your Wish (e.g. Happy Birthday):</label>
-            <input
-              type="text"
-              id="wish"
-              placeholder="Enter your wish"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="bgImage">Choose Background Image:</label>
-            <input type="file" id="bgImage" accept="image/*" />
-          </div>
-
-          <div class="form-group">
-            <label for="personalMessage">Your Message:</label>
-            <textarea
-              id="personalMessage"
-              placeholder="Write a personal message..."
-              rows="4"
-            ></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="fontColor">Choose Text Color:</label>
-            <input type="color" id="fontColor" value="#ffffff" />
-          </div>
-
-          <button type="submit">Generate Card</button>
-        </form>
-      </div>
-
-      <div id="cardOutput" class="card">
-        <div id="cardMessage">
-          <p id="greetingText"></p>
-          <p id="personalText"></p>
-        </div>
-        <p id="userSignature"></p>
-      </div>
-
-      <button id="downloadButton">Download Card</button>
+          <button id="downloadButton" class="btn-download">
+            <i class="fas fa-download"></i> Download Card
+          </button>
+        </section>
+      </main>
     </div>
 
     <script>
