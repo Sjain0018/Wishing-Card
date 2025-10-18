@@ -55,7 +55,7 @@ Feel free to fork this project and submit pull requests for any improvements.
 
 ## Author
 
-Sakshi Jain
+Sakshi Jain -- Coder Girl
 
 ## Acknowledgments
 
